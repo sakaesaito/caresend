@@ -1,36 +1,40 @@
+@use '../global/forward' as *;
+
 .info {
     width: 100%;
-    color: #fff;
-    background: url(img/background.png) no-repeat center /cover;
+    color: $color-white;
+    background: url(../img/background.png) no-repeat center / cover;
+    margin-block-start: rem(31);
+}
 
+.info__inner {
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    padding-block: rem(40);
+    padding-inline: rem(28);
+}
 
-    &_inner {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        padding: 40px 28px;
-    }
+.info__title {
+    font-size: rem(24);
+    line-height: 1.8;
+    font-weight: 700;
+}
 
-    &_title {
-        font-size: 24px;
-        line-height: 1.8;
-        font-weight: 700;
-    }
+.contact__second {
+    font-size: rem(20);
+    font-weight: 700;
+    border-radius: rem(25);
+    width: rem(320);
+    height: rem(52);
+    margin-block-start: rem(40);
+    background-color: $color-white;
+    color: $color-primary;
+    transition: 0.4s;
+    border-style: none;
+    cursor: pointer;
+}
 
-    &_inner button {
-        font-size: 20px;
-        font-weight: 700;
-        border-radius: 25px;
-        width: 320px;
-        height: 52px;
-        margin-top: 40px;
-        background-color: #fff;
-        color: #007FC6;
-        transition: 0.4s;
-        border-style: none;
-    }
-
-    &_inner button:hover {
-        opacity: .6;
-    }
+.contact__second:hover {
+    opacity: 0.6;
 }

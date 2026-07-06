@@ -1,0 +1,10 @@
+@use '../global/forward' as *;
+
+.l-inner {
+    width: min(calc(1024px + 20px * 2), 100%);
+    margin-inline: auto;
+    padding-inline: rem($pc-sidePadding);
+    @include mq(sp) {
+        padding-inline: rem($sp-sidePadding);
+    }
+}

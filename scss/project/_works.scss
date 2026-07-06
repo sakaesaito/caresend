@@ -1,36 +1,43 @@
-// 作品（Works）セクション
+@use '../global/forward' as *;
+
 .works {
-    background-color: #fff;
-    color: #333333;
+    background-color: $color-white;
+    color: $color-text;
     width: 100%;
-  
-    &_inner {
-      width: 100%;
-      max-width: 375px;
-      margin: 0 auto 39px;
-      text-align: center;
-      padding: 0 18px;
+}
+
+.works__inner {
+    max-width: rem(880);
+    text-align: center;
+    padding-inline: rem(18);
+}
+.works__title {
+    @include mq(sp) {
+        font-size: rem(20);
+    }   
+}
+.works__logo {
+    display: flex;
+    margin-inline: auto;
+    justify-content: center;
+    gap: rem(80);
+    padding-block-start: rem(40);
+    @include mq(sp) {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }  
+}
+.works__logo img {
+    width: 100%;
+    max-width: rem(428);
+    height: auto;
+}
+
+.works__logo img:nth-child(2) {
+    margin-block-start: rem(8);
+    width: 82%;
+    @include mq(sp) {
+        width: 100%;
     }
-  
-    &_title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #333;
-      padding-top: 40px;
-    }
-  
-    &_logo {
-      img {
-        width: 82%;
-        height: auto;
-        margin: 30px auto 0;
-        text-align: center;
-  
-        &:nth-child(2) {
-          margin-top: 8px;
-          width: 82%;
-        }
-      }
-    }
-  }
-  
+}

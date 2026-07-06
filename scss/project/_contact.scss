@@ -1,153 +1,173 @@
-// お問い合わせフォーム
+@use '../global/forward' as *;
+
 .contact {
-    margin: 202px auto 0;
-  
-    .contact_inner {
-      margin: 0 auto;
-      width: 100%;
-      padding: 8px 8px 17px;
-      height: auto;
-      background-color: #fff;
-      display: block;
-      border-radius: 6px;
-      color: #333333;
+    margin-block-start: 0;
+    flex-shrink: 0;
+    width: rem(400);
+    @include mq(sp) {
+        margin-block-start: rem(202);
+        width: 100%;
     }
-  
-    .contact_text {
-      width: 100%;
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      background-color: #007FC6;
-      text-align: center;
-      border-radius: 6px;
-      align-items: center;
-      padding: 16px 0;
+}
+
+.contact__inner {
+    margin-inline: auto;
+    width: 100%;
+    padding-block: rem(8) rem(28);
+    padding-inline: rem(8);
+    height: auto;
+    background-color: $color-white;
+    display: block;
+    border-radius: rem(6);
+    color: $color-text;
+}
+
+.contact__text {
+    width: 100%;
+    font-size: rem(20);
+    font-weight: 700;
+    color: $color-white;
+    background-color: $color-primary;
+    text-align: center;
+    border-radius: rem(6);
+    align-items: center;
+    padding-block: rem(16);
+    @include mq(sp) {
+        font-size: rem(16);
     }
-  
-    .contact_polygon {
-      width: 17px;
-      position: relative;
-      top: -6px;
-      left: 155px;
+}
+
+.contact__polygon {
+    width: rem(17);
+    position: relative;
+    top: rem(-6);
+    left: 45%;
+}
+
+.contact__polygon-second {
+    top: rem(-10);
+}
+
+.contact__name-sec {
+    width: 100%;
+    display: flex;
+    gap: rem(18);
+    margin-block-start: rem(6);
+    justify-content: center;
+}
+
+
+.contact__note {
+    width: 100%;
+    font-size: rem(14);
+    font-weight: 400;
+    margin-block-start: rem(24);
+    line-height: 1.5;
+    @include mq(sp) {
+        font-size: rem(12);
     }
-    
-    .contact_polygon_second {
-        top: -10px;
-      }
-    
-  
-    .contact_name_sec {
-      width: 100%;
-      display: flex;
-      gap: 9px;
-      margin-top: 6px;
-    }
-  
-    .contact_note {
-      width: 100%;
-      font-size: 12px;
-      font-weight: 400;
-      margin-top: 26px;
-      line-height: 1.25;
-    }
-  }
-  
-  // ラベル
-  label {
+}
+.contact-company {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+}
+label {
     display: block;
     font-weight: 700;
-    font-size: 14px;
-    margin-top: 10px;
-  
-    &:nth-child(1) {
-      margin-top: 0;
-    }
-  
-    &[for="company"],
-    &[for="email"],
-    &[for="tel"] {
-      margin-top: 15px;
-    }
-  
-    &[for="tel"] {
-      margin-top: 14px;
-    }
-  
-    span {
-      font-weight: 400;
-      font-size: 14px;
-      color: #F90000;
-    }
-  }
-  
-  // 入力フィールド
-  input {
-    color: #333333;
+    font-size: rem(14);
+    margin-block-start: rem(10);
+}
+
+label:nth-child(1) {
+    margin-block-start: 0;
+}
+
+label[for="company"],
+label[for="email"],
+label[for="tel"] {
+    margin-block-start: rem(15);
+}
+
+label[for="tel"] {
+    margin-block-start: rem(14);
+}
+
+label span {
+    font-weight: 400;
+    font-size: rem(14);
+    color: $color-error;
+}
+
+input {
+    color: $color-text;
     background-color: #F5F8FA;
-    margin-top: 5px;
-  
-    &[type="text"],
-    &[type="tel"],
-    &[type="email"] {
-      display: block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 16px;
-      font-weight: 400;
-      width: 100%;
-      padding-left: 8px;
-    }
-  
-    &[type="text"] {
-      padding: 12px 0 15px;
-      margin-top: 8px;
-    }
-  
-    &[type="tel"] {
-      padding: 15px 0 14px;
-      margin-top: 8px;
-    }
-  
-    &[type="email"] {
-      padding: 12px 0 15px;
-      margin-top: 5px;
-    }
-  
-    &[type="submit"] {
-      display: block;
-      text-align: center;
-      width: 75%;
-      margin: 42px auto 0;
-      padding: 12px 0;
-      background-color: #007FC6;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-      border-radius: 30px;
-      border-style: none;
-      transition: 0.4s;
-  
-      &:hover {
-        opacity: 0.6;
-      }
-    }
-  }
-  
-  // 送信ボタンの無効時スタイル
-  #js-submit:disabled,
-  #js-submit02:disabled {
-    opacity: 0.9;
-  }
-  
-  // メッセージ関連
-  .end-message,
-  .end-message02,
-  .false-message {
-    display: none;
-    padding-top: 40px;
+    margin-block-start: rem(5);
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    display: block;
+    border: 1px solid $color-white;
+    border-radius: rem(4);
+    box-sizing: border-box;
+    font-size: rem(16);
+    font-weight: 400;
+    width: 100%;
+    padding-inline-start: rem(8);
+}
+
+input[type="text"] {
+    padding-block: rem(12) rem(15);
+    margin-block-start: rem(8);
+}
+
+input[type="tel"] {
+    padding-block: rem(15) rem(14);
+    margin-block-start: rem(8);
+}
+
+input[type="email"] {
+    padding-block: rem(12) rem(15);
+    margin-block-start: rem(5);
+}
+
+input[type="submit"] {
+    display: block;
     text-align: center;
-  }
-  
+    width: 75%;
+    margin-block-start: rem(31);
+    margin-inline: auto;
+    padding-block: rem(12);
+    background-color: $color-primary;
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 700;
+    font-size: rem(20);
+    border-radius: rem(30);
+    border-style: none;
+    transition: 0.4s;
+    cursor: pointer;
+    @include mq(sp) {
+        font-size: rem(16);
+    }
+}
+
+input[type="submit"]:hover {
+    opacity: 0.6;
+}
+
+#js-submit:disabled,
+#js-submit02:disabled {
+    opacity: 0.9;
+}
+
+.end-message,
+.end-message02,
+.false-message {
+    display: none;
+    padding-block-start: rem(40);
+    text-align: center;
+}

@@ -1,6 +1,1 @@
-//メディアクエリのmixin
-@mixin mq($breakpoint) {
-    @media #{map-get($breakpoints, $breakpoint)} { //map-get()は第1引数に指定したmap型の変数から、第2引数で指定したkeyを元にそのvalueを取得します。
-        @content;
-    }
-}
+// mixinはscss/global/_mixin.scssに移動しました

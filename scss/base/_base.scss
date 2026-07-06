@@ -1,34 +1,39 @@
+@use '../global/forward' as *;
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style: none;
-    font-family: Noto Sans JP, sans-serif;
-  }
-  
-  html {
+    font-family: $font-base;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font-base;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
     scroll-behavior: smooth;
-  }
-  
-  body {
-    margin: 0 auto;
+
+    @media screen and (max-width: #{$pc-camp - 1}px) and (min-width: #{$breakpoint}px) {
+        font-size: calc(16 / #{$pc-camp} * 100vw);
+    }
+    @media screen and (max-width: #{$breakpoint - 1}px) {
+        font-size: calc(16 / #{$sp-camp} * 100vw);
+    }
+}
+
+body {
+    margin-inline: auto;
     position: relative;
-    color: #333333;
-  }
-  
-  img {
+    color: $color-text;
+}
+
+img {
     width: 100%;
     height: auto;
-  }
-  
-  .job_listing {
-    position: absolute;
-    max-width: 360px;
-    bottom: 51.6%;
-    left: 6px;
-  }
-  .button {
-    width: 100%;
-    max-width: 100vw;
-  }
-  
+}

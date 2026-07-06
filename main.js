@@ -5,14 +5,14 @@ $(function () {
   $(".menu").click(function () {
     //「.menu」に「.active」を追加・削除
     $(this).toggleClass("active");
-    //「.nav」に「.active」を追加・削除
-    $(".drawer_nav").toggleClass("active");
-    // ナビゲーションメニュー内のリンク（.drawer_item a）がクリックされたときの処理を定義
-    $(".drawer_item a").click(function () {
+    //「.drawer__nav」に「.active」を追加・削除
+    $(".drawer__nav").toggleClass("active");
+    // ナビゲーションメニュー内のリンク（.drawer__item a）がクリックされたときの処理を定義
+    $(".drawer__item a").click(function () {
       //メニューボタンから「.active」クラスを削除
       $(".menu").removeClass("active")
       // ナビゲーションメニューから「.active」クラスを削除
-      $(".drawer_nav").removeClass("active")
+      $(".drawer__nav").removeClass("active")
     })
   });
 });
@@ -49,7 +49,7 @@ const swiper = new Swiper('.swiper01', {
 
 
 // // // カードスライダーのjQuery
-const CardSwiper = new Swiper('.slider-sec-swiper', {
+const CardSwiper = new Swiper('.slider__swiper', {
   speed: 1000,
   loop: true,
   allowTouchMove: true,
@@ -57,13 +57,19 @@ const CardSwiper = new Swiper('.slider-sec-swiper', {
   breakpoints: {
     0: {
       spaceBetween: 30, // 要素間の余白
-      centeredSliders: true,//中央を起点に
+      centeredSlides: true,//中央を起点に
       slidesPerView: 1, // 一度に表示するスライドの数
       slidesPerGroup: 1, // 一度にスワイプされるスライドの数
     },
 
-    1024: {
+    768: {
       spaceBetween: 50, // 要素間の余白
+      centeredSliders: true,
+      slidesPerView: 2, // 一度に表示するスライドの数
+      slidesPerGroup: 2, // 一度にスワイプされるスライドの
+    },
+    1024: {
+      spaceBetween: 70, // 要素間の余白
       centeredSliders: true,
       slidesPerView: 2, // 一度に表示するスライドの数
       slidesPerGroup: 2, // 一度にスワイプされるスライドの
@@ -79,7 +85,7 @@ const CardSwiper = new Swiper('.slider-sec-swiper', {
 
 
 // Q&AアコーディオンのjQuery
-$('.accordion-header').click(function () { // .accordion-headerをクリックで発火
+$('.accordion__header').click(function () { // .accordion__headerをクリックで発火
   $(this).next().slideToggle();
   // $(this)...$('.accordion-header')の.next()...次の要素が.slideToggle()...表示と非表示を交互にする
   $(this).toggleClass('active');

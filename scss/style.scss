@@ -1,22 +1,22 @@
-@use 'base/destyle';
-@use'base/base';
-@use 'base/header/header';
-@use'base/mixin';
-
-@use 'component/footer/footer';
-@use 'component/header/drawer';
-@use 'component/header/hamburger';
-@use 'component/header/header';
-
-
-@use 'project/swiper-slider';
-@use 'project/hero';
-@use 'project/lead';
-@use 'project/works';
-@use 'project/feature';
-@use 'project/info';
-@use 'project/accordion';
-@use 'project/recommend';
-@use 'project/contact';
-
-
+@use './global/forward';
+@use './base/destyle';
+@use './base/base';
+@use './layout/layout';
+@use './layout/section';
+@use './component/header/header';
+@use './component/header/drawer';
+@use './component/header/hamburger';
+@use './component/footer/footer';
+@use './project/swiper-slider';
+@use './project/hero';
+@use './project/lead';
+@use './project/works';
+@use './project/feature';
+@use './project/info';
+@use './project/slider';
+@use './project/accordion';
+@use './project/recommend';
+@use './project/plan';
+@use './project/contact';
+@use './utility/utility';
+@use './utility/br';

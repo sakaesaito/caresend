@@ -1,0 +1,41 @@
+@use 'sass:map';
+
+//=====================================
+//    変数
+//=====================================
+$pc-inner: 1440; //pcカンプの幅
+$pc-sidePadding: 40; //pc版サイドのpadding
+$pc-inner-sum: calc($pc-inner + $pc-sidePadding * 2);
+$sp-camp: 375; //spカンプの幅
+$breakpoint: 769; //ブレイクポイント（PCカンプとSPカンプの境界線）
+$sp-sidePadding: 20; //sp版サイドのpadding
+$pc-camp: 1440;
+$sp-inner: 600;
+$sp-inner-sum: calc($sp-inner + $sp-sidePadding * 2);
+
+//=====================================
+//    関数
+//=====================================
+@function rem($arg) {
+  @return calc($arg / 16 * 1rem);
+}
+@function px($arg) {
+  @return calc($arg * 1px);
+}
+
+//=====================================
+//    ブレイクポイント
+//=====================================
+$breakpoints: (
+  //キー : 値
+  'sp': "screen and (max-width: #{$breakpoint - 1}px)",
+  'sp-lg': "(min-width: #{$sp-inner-sum}px)",
+  'pc': "(min-width: #{$breakpoint}px)",
+  'lg': "(min-width: #{$pc-inner-sum}px)",
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

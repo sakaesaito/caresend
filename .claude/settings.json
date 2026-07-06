@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(npx sass *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(npx playwright *)"
+    ]
+  }
+}

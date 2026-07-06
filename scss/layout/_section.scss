@@ -1,0 +1,20 @@
+@use '../global/forward' as *;
+
+// セクション共通余白。hero など個別に余白を持つセクションには付与しない。
+.l-section {
+    padding-block-start: rem(96);
+    @include mq(sp) {
+        padding-block-start: rem(64);
+    }
+}
+
+.sec__title {
+    font-size: rem(32);
+    font-weight: 700;
+    text-align: center;
+    color: $color-text;
+    @include mq(sp) {
+        font-size: rem(24);
+    }
+    
+}

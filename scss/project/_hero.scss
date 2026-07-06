@@ -1,114 +1,179 @@
-// 横幅の最大値 & センター配置（こちらのコードはchatGTP参照）
-@mixin container($max-width: 375px, $padding: 15px) {
+@use '../global/forward' as *;
+
+.hero {
     width: 100%;
-    max-width: $max-width;
-    margin: 0 auto;
-    padding-left: $padding;
-    padding-right: $padding;
-  }
-  
-  // グラデーション背景
-  @mixin gradient-bg {
-    background: linear-gradient(287.03deg, #02D1FF 0%, #007FC6 100%);
-  }
-  
-  // テキストスタイル（フォントサイズ、フォントウェイト、行間）
-  @mixin text-style($size, $weight, $line-height) {
-    font-size: $size;
-    font-weight: $weight;
-    line-height: $line-height;
-  }
-  
-  // 2. ヒーローセクションのスタイル
-  
-  .hero {
+    margin-inline: auto;
+    background: linear-gradient(287.03deg, $color-gradient-from 0%, $color-primary 100%);
+    padding-block-start: 96px;
+    padding-block-end: rem(84);
+    @include mq(sp) {
+        padding-block-start: rem(40);
+        padding-block-end: 0;
+    }
+}
+
+.hero__inner {
     width: 100%;
-    margin: 0 auto;
-    @include gradient-bg;
-    padding-top: 64px;
-  
-    &_inner {
-      @include container; // コンテナスタイル適用
-      color: #fff;
-      padding-bottom: 26px;
-      position: relative;
+    max-width: 1256px;
+    margin-inline: auto;
+    padding-inline: rem(40);
+    color: $color-white;
+    padding-block-end: 0;
+    @include mq(sp) {
+        max-width: rem(500);
+        padding-inline: rem(15);
+        padding-block-end: rem(26);
     }
-  
-    &_left {
-      padding-bottom: 26px;
+}
+
+.hero__cols {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-block-start: rem(96);
+    gap: rem(160);
+    @include mq(sp) {
+        display: flex;
+        flex-direction: column;
     }
-  
-    &_text {
-      text-align: center;
+}
+
+.hero__left {
+    position: relative;
+    @include mq(sp) {
+        flex: none;
+        padding-block-end: rem(26);
     }
-  
-    &_copy {
-      @include text-style(14px, 400, 1.5);
-      margin-top: 42px;
+}
+
+.hero__text {
+    text-align: left;
+    @include mq(sp) {
+        text-align: center;
     }
-  
-    &_catch {
-      @include text-style(24px, 700, 1.8);
-      margin-top: 19px;
+}
+
+.hero__copy {
+    font-size: rem(20);
+    font-weight: 400;
+    line-height: 1.5;
+    @include mq(sp) {
+        font-size: rem(14);
     }
-  
-    &_read {
-      @include text-style(14px, 400, 1.8);
-      margin-top: 24px;
+}
+
+.hero__catch {
+    font-size: rem(56);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-block-start: rem(19);
+    @include mq(sp) {
+        font-size: rem(24);
+        line-height: 1.8;
+        margin-block-start: rem(18);
     }
-  
-    &_list {
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
+}
+
+.hero__read {
+    font-size: rem(20);
+    font-weight: 400;
+    line-height: 1.8;
+    margin-block-start: rem(32);
+    @include mq(sp) {
+        font-size: rem(14);
+        margin-block-start: rem(24);
     }
-  
-    &_about {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      margin: 16px auto 0;
-  
-      li {
-        background-color: #fff;
-        color: #007FC6;
-        border-radius: 50%;
-        height: 112px;
-        place-content: center;
-      }
+}
+
+.hero__list {
+    width: 100%;
+    text-align: left;
+    margin-inline: 0;
+    @include mq(sp) {
+        text-align: center;
+        margin-inline: auto;
     }
-  
-    &_item {
-      @include text-style(16px, 700, 1);
+}
+
+.hero__about {
+    display: grid;
+    grid-template-columns: repeat(3, rem(164));
+    gap: rem(22);
+    margin-block-start: rem(32);
+    margin-inline: 0;
+    @include mq(sp) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(4);
+        margin-block-start: rem(16);
+        margin-inline: auto;
     }
-  
-    &_detail {
-      margin-top: 15px;
-      font-weight: 700;
-      margin-left: 4px;
-      letter-spacing: 1px;
-  
-      span {
-        font-size: 12px;
-        vertical-align: top;
-        color: #333;
-      }
-  
-      #span {
-        font-size: 16px;
-        vertical-align: middle;
-        color: #007FC6;
-        margin-left: 2px;
-      }
+}
+
+.hero__about li {
+    background-color: $color-white;
+    color: $color-primary;
+    border-radius: 50%;
+    height: rem(164);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include mq(sp) {
+        height: rem(112);
+        width: rem(112);
     }
-  
-    &_note {
-      @include text-style(12px, 400, 1);
-      text-align: left;
-      margin: 24px auto 0;
-  
-      p:nth-child(2) {
-        margin-top: 5px;
-      }
+}
+
+.hero__item {
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: 1;
+    @include mq(sp) {
+        font-size: rem(16);
     }
-  }
+}
+
+.hero__detail {
+    font-size: rem(32);
+    margin-block-start: rem(22);
+    font-weight: 700;
+    margin-inline-start: rem(5);
+    letter-spacing: 1px;
+    @include mq(sp) {
+        font-size: rem(18);
+        margin-block-start: rem(18);
+    }
+}
+
+.hero__detail span {
+    font-size: rem(12);
+    vertical-align: top;
+    color: $color-text;
+}
+
+.hero__detail #span {
+    font-size: rem(24);
+    vertical-align: middle;
+    color: $color-primary;
+    margin-inline-start: rem(2);
+    @include mq(sp) {
+        font-size: rem(18);
+    }
+}
+
+.hero__note {
+    font-size: rem(12);
+    font-weight: 400;
+    line-height: 1;
+    text-align: left;
+    margin-block-start: rem(32);
+    margin-inline: 0;
+    @include mq(sp) {
+        margin-block-start: rem(24);
+        margin-inline: auto;
+    }
+}
+
+.hero__note p:nth-child(2) {
+    margin-block-start: rem(5);
+}
