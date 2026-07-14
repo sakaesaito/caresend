@@ -5,10 +5,10 @@
     @include mq(sp) {
         display: block;
         position: fixed;
-        top: rem(96);
+        top: rem(64);
         right: 0;
         width: 100%;
-        height: calc(100vh - rem(96));
+        height: calc(100vh - rem(64));
         background-color: $color-primary;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         transition: 0.3s;

@@ -6,6 +6,9 @@
     margin-inline: auto;
     background-color: $color-bg-gray;
     padding-block-end: rem(54);
+    @include mq(sp) {
+        padding-block-end: rem(12);
+    }
 }
 
 .plan__inner {
@@ -40,15 +43,17 @@
     height: 100%;
     border-block-start: solid rem(12) $color-primary;
     background-color: $color-white;
-    padding-block: rem(44) rem(90);
+    padding-block: rem(32) rem(70);
     display: flex;
     flex-direction: column;
-    gap: rem(23);
+    gap: rem(15);
+    min-height: rem(277);
     @include mq(sp) {
         max-width: rem(96);
         border-block-start: solid rem(6) $color-primary;
         padding-block: rem(8) rem(17);
         gap: rem(12);
+        min-height: rem(91);
     }
 }
 
@@ -98,3 +103,13 @@
     padding-block-start: rem(80);
     margin-block-start: rem(80);
 }
+
+.l-section.--plan {
+    padding-block-start: rem(80);
+    @include mq(sp) {
+        padding-block-start: rem(54);
+    }
+}
+// .sec__title.--plan {
+//     line-height: 1;
+// }

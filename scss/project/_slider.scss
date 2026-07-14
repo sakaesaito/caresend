@@ -10,6 +10,10 @@
     position: relative;
     padding-inline: rem(16);
     overflow: hidden;
+    @include mq(sp) {
+        padding-inline: 0;
+    }
+    
 }
 
 .slider__sec {

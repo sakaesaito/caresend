@@ -11,8 +11,11 @@
     width: 100%;
     margin-inline: auto;
     text-align: center;
-    padding-block: rem(40);
+    padding-block: rem(60);
     padding-inline: rem(28);
+    @include mq(sp) {
+        padding-block: rem(40);
+    }
 }
 
 .info__title {
@@ -27,12 +30,15 @@
     border-radius: rem(25);
     width: rem(320);
     height: rem(52);
-    margin-block-start: rem(40);
+    margin-block-start: rem(24);
     background-color: $color-white;
     color: $color-primary;
     transition: 0.4s;
     border-style: none;
     cursor: pointer;
+    @include mq(sp) {
+        margin-block-start: rem(39);
+    }
 }
 
 .contact__second:hover {

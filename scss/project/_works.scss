@@ -14,6 +14,7 @@
 .works__title {
     @include mq(sp) {
         font-size: rem(20);
+        line-height: 1;
     }   
 }
 .works__logo {
@@ -21,11 +22,13 @@
     margin-inline: auto;
     justify-content: center;
     gap: rem(80);
-    padding-block-start: rem(40);
+    padding-block-start: 4%;
     @include mq(sp) {
         display: flex;
         flex-direction: column;
         gap: 0;
+        padding-block-start: 8%;
+        padding-inline: rem(30);
     }  
 }
 .works__logo img {
@@ -39,5 +42,11 @@
     width: 82%;
     @include mq(sp) {
         width: 100%;
+    }
+}
+.l-section.--work {
+    padding-block-start: rem(70);
+    @include mq(sp) {
+        padding-block-start: rem(40);
     }
 }

@@ -5,7 +5,6 @@
     flex-shrink: 0;
     width: rem(400);
     @include mq(sp) {
-        margin-block-start: rem(202);
         width: 100%;
     }
 }
@@ -20,6 +19,9 @@
     display: block;
     border-radius: rem(6);
     color: $color-text;
+    @include mq(sp) {
+    padding-block: rem(8) rem(19);
+    }
 }
 
 .contact__text {
@@ -41,7 +43,7 @@
     width: rem(17);
     position: relative;
     top: rem(-6);
-    left: 45%;
+    left: 47%;
 }
 
 .contact__polygon-second {
@@ -62,9 +64,11 @@
     font-size: rem(14);
     font-weight: 400;
     margin-block-start: rem(24);
+    padding-inline: 3%;
     line-height: 1.5;
     @include mq(sp) {
         font-size: rem(12);
+        padding-inline: 0;
     }
 }
 .contact-company {
@@ -85,9 +89,16 @@ label:nth-child(1) {
 }
 
 label[for="company"],
-label[for="email"],
 label[for="tel"] {
-    margin-block-start: rem(15);
+    margin-block-start: 3%;
+    margin-inline-start: 1%;
+}
+label[for="email"] {
+    margin-block-start: rem(13);
+    margin-inline-start: 3%;
+    @include mq(sp) {
+        margin-inline-start: 1%;
+    }
 }
 
 label[for="tel"] {
@@ -122,22 +133,32 @@ input[type="email"] {
 input[type="text"] {
     padding-block: rem(12) rem(15);
     margin-block-start: rem(8);
+    padding-inline-start: 5%;
 }
 
 input[type="tel"] {
     padding-block: rem(15) rem(14);
     margin-block-start: rem(8);
+    padding-inline-start: 5%;
+    @include mq(sp) {
+        padding-inline-start: 3%;
+    }
 }
 
 input[type="email"] {
     padding-block: rem(12) rem(15);
     margin-block-start: rem(5);
+    padding-inline-start: 5%;
+    @include mq(sp) {
+        margin-block-start: rem(10);
+        padding-inline-start: 3%;
+    }
 }
 
 input[type="submit"] {
     display: block;
     text-align: center;
-    width: 75%;
+    width: 83%;
     margin-block-start: rem(31);
     margin-inline: auto;
     padding-block: rem(12);
@@ -152,6 +173,8 @@ input[type="submit"] {
     cursor: pointer;
     @include mq(sp) {
         font-size: rem(16);
+        width: 75%;
+        margin-block-start: rem(40);
     }
 }
 
@@ -170,4 +193,8 @@ input[type="submit"]:hover {
     display: none;
     padding-block-start: rem(40);
     text-align: center;
+}
+
+.contact__company input {
+    padding-inline-start: 3%;
 }

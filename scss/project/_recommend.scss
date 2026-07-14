@@ -1,19 +1,22 @@
 @use '../global/forward' as *;
 
 .recommend {
-    padding-block: rem(72) rem(46);
+    padding-block: rem(96) rem(57);
     background: linear-gradient(287.03deg, $color-gradient-from 0%, $color-primary 100%);
     color: $color-white;
+    @include mq(sp) {
+        padding-block: rem(72) rem(47);
+    }
 }
 
 .recommend__inner {
     margin-inline: auto;
-    padding-inline: rem(16);
+    padding-inline: rem(20);
     width: 100%;
-    max-width: rem(848);
+    max-width: rem(888);
     display: grid;
     grid-template-columns: rem(413) rem(400);
-    column-gap: rem(60);
+    column-gap: rem(35);
     align-items: start;
     padding-block-start: rem(79);
     @include mq(sp) {
@@ -21,30 +24,33 @@
         grid-template-columns: 1fr;
         gap: rem(40);
         padding-block-start: rem(26);
+        padding-inline: rem(16);
     }
 }
 
-.recommend__title {
-    font-size: rem(24);
-    font-weight: 700;
-    line-height: 1.5;
-    text-align: center;
+.sec__title.--recommend {
+    color: $color-white;
+    line-height: 1;
+    @include mq(sp) {
+        line-height: 1.5;
+    }
 }
 
 .recommend__left {
-    padding-block-start: rem(24);
+    padding-block-start: rem(32);
     @include mq(sp) {
-        margin-block-start: 0;
+        padding-block-start: 0;
     }
 }
 
 .recommend__item {
-    font-size: rem(12);
+    font-size: rem(16);
     font-weight: 400;
     line-height: 1.8;
-    margin-block-start: rem(26);
     @include mq(sp) {
         margin-block-start: 0;
+        font-size: 12px;
+        text-align: center;
     }
     
 }
@@ -58,6 +64,7 @@
     text-align: center;
     @include mq(sp) {
         margin-block-start: rem(16);
+        width: 72%;
     }
 }
 .recommend-contact__form {
@@ -65,4 +72,7 @@
     padding: rem(8) rem(8) rem(28) rem(8);
     color: $color-text;
     border-radius: 5px;
+    @include mq(sp) {
+        padding: rem(8) rem(7) rem(19) rem(9);
+    }
 }

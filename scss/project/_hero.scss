@@ -5,7 +5,7 @@
     margin-inline: auto;
     background: linear-gradient(287.03deg, $color-gradient-from 0%, $color-primary 100%);
     padding-block-start: 96px;
-    padding-block-end: rem(84);
+
     @include mq(sp) {
         padding-block-start: rem(40);
         padding-block-end: 0;
@@ -13,12 +13,12 @@
 }
 
 .hero__inner {
-    width: 100%;
-    max-width: 1256px;
+    width: min(calc(rem(1172) + rem(40) * 2), 100%);
     margin-inline: auto;
     padding-inline: rem(40);
     color: $color-white;
     padding-block-end: 0;
+
     @include mq(sp) {
         max-width: rem(500);
         padding-inline: rem(15);
@@ -28,26 +28,29 @@
 
 .hero__cols {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    padding-block-start: rem(96);
-    gap: rem(160);
+    padding-block-start: rem(84);
+
     @include mq(sp) {
         display: flex;
         flex-direction: column;
+        padding-block-start: rem(64);
     }
 }
 
 .hero__left {
     position: relative;
+
     @include mq(sp) {
         flex: none;
-        padding-block-end: rem(26);
+        padding-block-end: rem(50);
     }
 }
 
 .hero__text {
     text-align: left;
+
     @include mq(sp) {
         text-align: center;
     }
@@ -57,6 +60,7 @@
     font-size: rem(20);
     font-weight: 400;
     line-height: 1.5;
+
     @include mq(sp) {
         font-size: rem(14);
     }
@@ -66,7 +70,7 @@
     font-size: rem(56);
     font-weight: 700;
     line-height: 1.5;
-    margin-block-start: rem(19);
+
     @include mq(sp) {
         font-size: rem(24);
         line-height: 1.8;
@@ -77,11 +81,13 @@
 .hero__read {
     font-size: rem(20);
     font-weight: 400;
-    line-height: 1.8;
-    margin-block-start: rem(32);
+    line-height: 1.5;
+    margin-block-start: rem(28);
+
     @include mq(sp) {
         font-size: rem(14);
         margin-block-start: rem(24);
+        line-height: 1.8;
     }
 }
 
@@ -89,9 +95,13 @@
     width: 100%;
     text-align: left;
     margin-inline: 0;
+    margin-inline-start: 2%;
+    padding-block-start: 1%;
+
     @include mq(sp) {
         text-align: center;
         margin-inline: auto;
+        margin-inline-start: 0;
     }
 }
 
@@ -101,6 +111,7 @@
     gap: rem(22);
     margin-block-start: rem(32);
     margin-inline: 0;
+
     @include mq(sp) {
         grid-template-columns: repeat(3, 1fr);
         gap: rem(4);
@@ -118,6 +129,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     @include mq(sp) {
         height: rem(112);
         width: rem(112);
@@ -128,6 +140,7 @@
     font-size: rem(24);
     font-weight: 700;
     line-height: 1;
+
     @include mq(sp) {
         font-size: rem(16);
     }
@@ -139,6 +152,7 @@
     font-weight: 700;
     margin-inline-start: rem(5);
     letter-spacing: 1px;
+
     @include mq(sp) {
         font-size: rem(18);
         margin-block-start: rem(18);
@@ -149,6 +163,7 @@
     font-size: rem(12);
     vertical-align: top;
     color: $color-text;
+    margin-inline-start: -2px;
 }
 
 .hero__detail #span {
@@ -156,6 +171,7 @@
     vertical-align: middle;
     color: $color-primary;
     margin-inline-start: rem(2);
+
     @include mq(sp) {
         font-size: rem(18);
     }
@@ -168,6 +184,7 @@
     text-align: left;
     margin-block-start: rem(32);
     margin-inline: 0;
+
     @include mq(sp) {
         margin-block-start: rem(24);
         margin-inline: auto;
@@ -176,4 +193,22 @@
 
 .hero__note p:nth-child(2) {
     margin-block-start: rem(5);
+}
+
+.hero__job-listing {
+    width: clamp(rem(220), 24vw, rem(360));
+    margin-block-start: -12%;
+    margin-inline-start: 66%;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @include mq(sp) {
+        margin-block-start: -2%;
+        width: 100%;
+        margin-inline: auto;
+    }
 }

@@ -95,7 +95,9 @@
                         <p>※1 CareSend開始2023年4月時と2024年4月時の比較</p>
                         <p>※2 CareSend2023年度一年間の実績</p>
                     </div>
-                    <picture></picture>
+                    <div class="hero__job-listing">
+                        <img src="img/job-listing.png" alt="" loading="lazy">
+                    </div>
                 </div>
                 <div class="contact">
                     <div class="contact__inner">
@@ -109,24 +111,24 @@
                             <div class="contact__name-sec">
                                 <div class="contact__name">
                                     <label for="lastname">姓<span>*</span></label>
-                                    <input type="text" placeholder="介護" required autocomplete="family-name">
+                                    <input id="lastname" type="text" placeholder="介護" required autocomplete="family-name">
                                 </div>
                                 <div class="contact__name">
                                     <label for="firstname">名<span>*</span></label>
-                                    <input type="text" placeholder="太郎" required autocomplete="given-name">
+                                    <input id="firstname" type="text" placeholder="太郎" required autocomplete="given-name">
                                 </div>
                             </div>
-                            <div class="contact-company">
+                            <div class="contact__company">
                                 <label for="company">会社名<span>*</span></label>
-                                <input type="text" placeholder="株式会社CareSend" required>
+                                <input id="company" type="text" placeholder="株式会社CareSend" required>
                             </div>
                             <div class="contact-company">
                                 <label for="email">メールアドレス<span>*</span></label>
-                                <input type="email" name="email" placeholder="caresend@caresend.com" required>
+                                <input id="email" type="email" name="email" placeholder="caresend@caresend.com" required>
                             </div>
                             <div class="contact-company">
                                 <label for="tel">電話番号<span>*</span></label>
-                                <input type="tel" name="tel" placeholder="000-0000-0000" required>
+                                <input id="tel" type="tel" name="tel" placeholder="000-0000-0000" required>
                             </div>
                             <div class="contact-company">
                                 <p class="contact__note">このフォームから送信された情報は、プライバシーポリシーに基づいて処理されます。</p>
@@ -140,7 +142,7 @@
             </div>
         </div>
     </section>
-    <section id="works" class="l-section">
+    <section id="works" class="l-section --work">
         <div class="works__inner l-inner">
             <h3 class="sec__title works__title">多くのお客様に選ばれ続けています</h3>
             <div class="works__logo">
@@ -149,7 +151,7 @@
             </div>
         </div>
         <div class="swiper swiper01">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper swiper-wrapper01">
                 <div class="swiper-slide"><img src="img/logo05.png" alt="介護サービスよつば"></div>
                 <div class="swiper-slide"><img src="img/logo01.jpg" alt="株式会社インフィニティギア"></div>
                 <div class="swiper-slide"><img src="img/logo02.png" alt="サイバーアドベンチャーズ株式会社"></div>
@@ -171,8 +173,13 @@
                     人材不足に悩む介護施設を<br>
                     認定介護福祉士などの<br class="sp-br"><span>高スキル介護人材</span>の派遣で<br>
                     支えるサービスです。</p>
-                <div class="lead__text-img"><img src="img/caresend-feature-01-sp.png" alt="派遣マッチングの図解"></div>
-                <div class="lead__text-imgpc"><img src="img/caresend-feature.png" alt="派遣マッチングの図解"></div>
+                <picture class="lead__img --pc"> 
+                    <!-- SP用 -->
+                    <source media="(max-width: 767px)" srcset="/img/caresend-feature-sp.png">
+
+                    <!-- PC用 -->
+                    <img src="/img/caresend-feature.png" alt="CareSendのサービス図解">
+                </picture>
             </div>
         </div>
     </section>
@@ -222,7 +229,7 @@
         <h2 class="slider__title sec__title">導入事例</h2>
         <div class="l-inner">
             <div class="swiper-container">
-                <div class=" swiper slider__swiper">
+                <div class="swiper swiper02 slider__swiper">
                     <div class="swiper-wrapper slider__sec">
                         <div class="swiper-slide swiper__box">
                             <div class="swiper__slider">
@@ -273,9 +280,9 @@
         </div>
     </section>
 
-    <section id="plan" class="anchor l-section">
+    <section id="plan" class="anchor l-section --plan">
         <div class="l-inner plan__inner">
-            <h2 class="sec__title">料金は成約手数料のみ!!</h2>
+            <h2 class="sec__title --plan">料金は成約手数料のみ!!</h2>
             <div class="plan__list">
                 <div class="plan__item">
                     <p class="plan__service">初期費用</p>
@@ -333,7 +340,7 @@
         </div>
     </section>
     <section class="recommend l-section">
-        <h2 class="recommend__title">介護派遣に関する資料を<br class="sp-br">無料でダウンロード</h2>
+        <h2 class="sec__title --recommend">介護派遣に関する資料を<br class="sp-br">無料でダウンロード</h2>
         <div class="recommend__inner l__inner">
             <div class="recommend__left">
                 <p class="recommend__item">CareSendに興味をお持ち頂き、ありがとうございます<br>
@@ -359,7 +366,7 @@
                                 <input type="text" name="firstname" placeholder="太郎" required autocomplete="given-name">
                             </div>
                         </div>
-                        <div>
+                        <div class="contact__company">
                             <label for="company">会社名<span>*</span></label>
                             <input type="text" name="company" placeholder="株式会社CareSend" required>
                         </div>

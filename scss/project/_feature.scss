@@ -21,9 +21,13 @@
 }
 
 .feature__item {
+    display: flex;
+    flex-direction: column;
     border: 1px solid $color-primary;
-    padding-block: rem(14) rem(21);
+    padding-block: rem(14)rem(23);
     padding-inline: rem(30);
+    min-height: rem(324);
+    gap: rem(18);
 }
 
 .feature__img {
@@ -37,7 +41,6 @@
 }
 
 .feature__title {
-    margin-block-start: rem(19);
     font-size: rem(20);
     font-weight: 700;
     line-height: 1.5;
@@ -49,6 +52,6 @@
     font-size: rem(16);
     line-height: 1.8;
     color: $color-text;
-    margin-block-start: rem(19);
     text-align: left;
+    flex: 1;
 }

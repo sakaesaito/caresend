@@ -4,7 +4,7 @@
 .l-section {
     padding-block-start: rem(96);
     @include mq(sp) {
-        padding-block-start: rem(64);
+        padding-block-start: rem(72);
     }
 }
 
@@ -13,6 +13,7 @@
     font-weight: 700;
     text-align: center;
     color: $color-text;
+    line-height: 1.5;
     @include mq(sp) {
         font-size: rem(24);
     }

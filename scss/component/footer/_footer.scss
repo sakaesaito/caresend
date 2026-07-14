@@ -22,10 +22,15 @@
     width: rem(227);
     margin-inline: auto;
     margin-block-end: rem(30);
+    @include mq(sp) {
+        margin-block-end: rem(37);
+    }
+}
+.footer__logo a {
     transition: 0.4s;
 }
 
-.footer__logo img:hover {
+.footer__logo a:hover {
     opacity: 0.6;
 }
 

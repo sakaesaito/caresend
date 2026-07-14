@@ -3,6 +3,16 @@
 .swiper {
     overflow: hidden;
     margin-block-start: rem(64);
+    padding-inline: rem(10);
+    @include mq(sp) {
+        margin-block-start: rem(44);
+    }
+}
+.swiper02 {
+    margin-block-start: rem(73);
+    @include mq(sp) {
+        margin-block-start: rem(57);
+    }
 }
 
 .swiper__slider img {
@@ -10,16 +20,12 @@
     height: auto;
 }
 
-.swiper01 .swiper-wrapper {
-    transition-timing-function: linear;
-}
-
 .swiper-wrapper {
     align-items: stretch;
 }
 
 .swiper-container {
-    max-width: rem(950);
+    max-width: rem(900);
     width: 100%;
     margin-inline: auto;
     position: relative;
@@ -40,6 +46,7 @@
     width: 100%;
     height: 100%;
     max-width: rem(405);
+    min-height: rem(488);
     display: flex;
     flex-direction: column;
     padding-inline: rem(20);
@@ -50,7 +57,8 @@
     gap: rem(24);
 
     @include mq(sp) {
-        padding-inline: rem(10);
+        padding-inline: rem(12);
+        min-height: rem(471);
     }
 }
 
@@ -82,7 +90,7 @@
 }
 
 .swiper__pic {
-    height: rem(64);
+    max-height: rem(64);
     margin-top: auto;
     display: flex;
     align-items: flex-end;
@@ -107,11 +115,14 @@
         width: rem(20);
         height: rem(20);
     }
-   
 }
 
 .swiper-button-prev {
-    left: -6%;
+    left: -4.5%;
+    top: 46%;
+    @include mq(sp) {
+        top: 45%;
+    }
 }
 
 .swiper-button-prev::after {
@@ -119,9 +130,23 @@
 }
 
 .swiper-button-next {
-    right: -6%;
+    right: -4.5%;
+    top: 46%;
+    @include mq(sp) {
+        top: 45%;
+    }
 }
 
 .swiper-button-next::after {
     background-image: url(../img/arrow-02.png);
+}
+
+
+// 無限スライダー単独指示
+.swiper-wrapper01 .swiper-slide img {
+    aspect-ratio: 248/99;
+}
+
+.swiper01 .swiper-wrapper {
+    transition-timing-function: linear;
 }
