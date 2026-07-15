@@ -57,7 +57,9 @@
     margin-block-start: rem(6);
     justify-content: center;
 }
-
+.contact__name {
+    flex: 1;
+}
 
 .contact__note {
     width: 100%;
